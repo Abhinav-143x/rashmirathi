@@ -72,7 +72,7 @@ const LINE_CHUNK_SIZE = 180;
 const PAGE_GROUP_COUNT = 5;
 const SEARCH_RESULT_LIMIT = 28;
 const DINKAR_WIKIPEDIA_URL = "https://en.wikipedia.org/wiki/Ramdhari_Singh_Dinkar";
-const CONTRIBUTION_REPO_URL = "https://github.com/Abhinav-143x/Rashmirathi-CodexV1";
+const CONTRIBUTION_REPO_URL = "https://github.com/Abhinav-143x/rashmirathi";
 const LAST_READ_PREFIX = "rashmirathi:last-read:";
 
 function authorDisplay(author: string) {
@@ -282,12 +282,14 @@ function ReadingGroupCard({
   highlightedLineId,
   fontScale,
   meaningDensity,
+  onMeaningOpen,
 }: {
   group: LineGroup;
   variant: "page" | "reel";
   highlightedLineId: string | null;
   fontScale: ReaderFontScale;
   meaningDensity: MeaningDensity;
+  onMeaningOpen?: () => void;
 }) {
   const isReel = variant === "reel";
   const [isOpen, setIsOpen] = useState(false);
@@ -315,6 +317,8 @@ function ReadingGroupCard({
     setIsOpen(nextOpen);
 
     if (nextOpen) {
+      onMeaningOpen?.();
+
       window.requestAnimationFrame(() => {
         if (isReel && triggerRef.current && centerInsideReel(triggerRef.current)) {
           return;
@@ -1030,6 +1034,10 @@ export function RashmirathiApp({ metadata }: RashmirathiAppProps) {
                     highlightedLineId={highlightedLineId}
                     fontScale={readerFontScale}
                     meaningDensity={meaningDensity}
+                    onMeaningOpen={() => {
+                      setIsAutoScrollEnabled(false);
+                      setAutoScrollRemaining(autoScrollSeconds);
+                    }}
                   />
                 ))}
               </div>
@@ -1118,7 +1126,7 @@ export function RashmirathiApp({ metadata }: RashmirathiAppProps) {
                       <button
                         type="button"
                         onClick={() => setIsReelKeyboardEnabled((enabled) => !enabled)}
-                        className={`flex min-h-11 items-center gap-2 border px-3 font-display text-sm transition focus:outline-none focus:ring-2 focus:ring-saffron ${
+                        className={`hidden min-h-11 items-center gap-2 border px-3 font-display text-sm transition focus:outline-none focus:ring-2 focus:ring-saffron md:flex ${
                           isReelKeyboardEnabled
                             ? "border-saffron/40 bg-saffron/12 text-saffron"
                             : "border-saffron/20 bg-ink/45 text-ash/58"
@@ -1197,10 +1205,14 @@ export function RashmirathiApp({ metadata }: RashmirathiAppProps) {
                     key={group.id}
                     group={group}
                     variant="reel"
-                    highlightedLineId={highlightedLineId}
-                    fontScale={readerFontScale}
-                    meaningDensity={meaningDensity}
-                  />
+                  highlightedLineId={highlightedLineId}
+                  fontScale={readerFontScale}
+                  meaningDensity={meaningDensity}
+                  onMeaningOpen={() => {
+                    setIsAutoScrollEnabled(false);
+                    setAutoScrollRemaining(autoScrollSeconds);
+                  }}
+                />
                 ))}
               </div>
             </section>

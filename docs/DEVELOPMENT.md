@@ -94,7 +94,7 @@ Groups one or two poem lines into vertical cards. Supports:
 - auto-scroll timer
 - font size control
 - meaning density control
-- Enter/Space meaning toggle
+- Enter/Space meaning toggle on desktop fullscreen
 - up/down swipe on mobile
 
 ## LocalStorage
@@ -113,4 +113,3 @@ The stored value includes mode, line id, page index, reel index, and visible lin
 - Prefer static JSON and client-side state over introducing a backend.
 - Keep reading controls accessible through buttons and labels.
 - Keep new visual elements consistent with the warm dark Mahabharata/Karna theme.
-

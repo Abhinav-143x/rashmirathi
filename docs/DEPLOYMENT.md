@@ -1,10 +1,10 @@
 # Deployment Plan
 
-The fastest and safest deployment path is GitHub private repository plus Vercel.
+The fastest deployment path is the public GitHub repository plus Vercel.
 
 ## Recommended Path
 
-1. Create a private GitHub repository.
+1. Push changes to the public GitHub repository.
 2. Push the local project to GitHub.
 3. Import the repository into Vercel.
 4. Use Vercel's default Next.js settings.
@@ -63,7 +63,7 @@ Use Vercel aliases to point the short URL at the latest production deployment wh
 
 ## Fastest Current Command Path
 
-After GitHub repo creation:
+After changes are ready:
 
 ```bash
 git add .
