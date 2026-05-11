@@ -8,6 +8,7 @@ import {
   ChevronLeft,
   ChevronRight,
   Flame,
+  Github,
   Keyboard,
   ListTree,
   Maximize2,
@@ -71,6 +72,7 @@ const LINE_CHUNK_SIZE = 180;
 const PAGE_GROUP_COUNT = 5;
 const SEARCH_RESULT_LIMIT = 28;
 const DINKAR_WIKIPEDIA_URL = "https://en.wikipedia.org/wiki/Ramdhari_Singh_Dinkar";
+const CONTRIBUTION_REPO_URL = "https://github.com/Abhinav-143x/Rashmirathi-CodexV1";
 const LAST_READ_PREFIX = "rashmirathi:last-read:";
 
 function authorDisplay(author: string) {
@@ -227,6 +229,22 @@ function AuthorLink({ name, subtle = false }: { name: string; subtle?: boolean }
       }`}
     >
       {name}
+    </a>
+  );
+}
+
+function ContributionLink({ compact = false }: { compact?: boolean }) {
+  return (
+    <a
+      href={`${CONTRIBUTION_REPO_URL}#contributing`}
+      target="_blank"
+      rel="noreferrer"
+      className={`inline-flex items-center justify-center gap-2 border border-saffron/45 bg-saffron/12 font-display text-saffron shadow-[inset_0_1px_0_rgba(246,234,210,0.10)] transition hover:border-saffron hover:bg-saffron/18 hover:text-ash focus:outline-none focus:ring-2 focus:ring-saffron ${
+        compact ? "min-h-11 px-3 text-sm" : "min-h-12 px-4 text-base"
+      }`}
+    >
+      <Github className={compact ? "h-4 w-4" : "h-5 w-5"} />
+      Contribute
     </a>
   );
 }
@@ -877,14 +895,17 @@ export function RashmirathiApp({ metadata }: RashmirathiAppProps) {
     return (
       <main className="min-h-screen pb-8">
         <header className="reader-container pt-5 sm:pt-8">
-          <button
-            type="button"
-            onClick={() => goHome()}
-            className="relative z-30 inline-flex min-h-12 items-center gap-2 border border-saffron/35 bg-sindoor/45 px-4 font-display text-base text-ash/85 transition hover:border-saffron hover:text-saffron focus:outline-none focus:ring-2 focus:ring-saffron"
-          >
-            <ArrowLeft className="h-4 w-4" />
-            सभी सर्ग
-          </button>
+          <div className="flex flex-wrap items-center justify-between gap-3">
+            <button
+              type="button"
+              onClick={() => goHome()}
+              className="relative z-30 inline-flex min-h-12 items-center gap-2 border border-saffron/35 bg-sindoor/45 px-4 font-display text-base text-ash/85 transition hover:border-saffron hover:text-saffron focus:outline-none focus:ring-2 focus:ring-saffron"
+            >
+              <ArrowLeft className="h-4 w-4" />
+              सभी सर्ग
+            </button>
+            <ContributionLink compact />
+          </div>
 
           <div className="mt-8 border-b border-saffron/22 pb-8">
             <div className="mb-5 flex h-12 w-12 items-center justify-center border border-saffron/45 bg-sindoor/45 text-saffron shadow-glow">
@@ -1238,6 +1259,9 @@ export function RashmirathiApp({ metadata }: RashmirathiAppProps) {
                 <span className="border border-copper/35 bg-ink/60 px-3 py-2">3632 Lines</span>
                 <span className="border border-copper/35 bg-ink/60 px-3 py-2">Search Ready</span>
               </div>
+              <div className="mt-6">
+                <ContributionLink />
+              </div>
             </div>
 
             <div className="grid gap-4">
@@ -1276,6 +1300,15 @@ export function RashmirathiApp({ metadata }: RashmirathiAppProps) {
               <Sparkles className="h-4 w-4 text-saffron" />
               Search, page, scroll, reel
             </span>
+            <a
+              href={`${CONTRIBUTION_REPO_URL}/blob/main/CONTRIBUTING.md`}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 text-saffron transition hover:text-ash focus:outline-none focus:ring-2 focus:ring-saffron"
+            >
+              <Github className="h-4 w-4" />
+              Contribution guide
+            </a>
           </footer>
         </div>
       </section>

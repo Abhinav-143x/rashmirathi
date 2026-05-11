@@ -47,6 +47,20 @@ Before first public deployment:
 - Confirm text and image rights.
 - Add a privacy note if analytics or tracking are added later.
 
+## Current Production URL
+
+```txt
+https://rashmirathi-codex-v1.vercel.app
+```
+
+Preferred short alias:
+
+```txt
+https://rashmirathi.vercel.app
+```
+
+Use Vercel aliases to point the short URL at the latest production deployment when available.
+
 ## Fastest Current Command Path
 
 After GitHub repo creation:
@@ -67,4 +81,3 @@ Use one of these paths:
 - Capacitor later if Play Store distribution is required.
 
 The app already avoids backend dependencies, so Android conversion should not require a major rewrite.
-

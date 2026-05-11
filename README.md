@@ -105,8 +105,14 @@ Each sarga JSON file contains sections and lines:
 - [Developer README](docs/DEVELOPMENT.md)
 - [Deployment Plan](docs/DEPLOYMENT.md)
 - [Improvement Roadmap](docs/ROADMAP.md)
+- [Contribution Guide](CONTRIBUTING.md)
+
+## Contributing
+
+Contributions are welcome for saral arth, English translation, Roman Hindi transliteration, OCR fixes, and reader UI improvements.
+
+Start with [CONTRIBUTING.md](CONTRIBUTING.md). For content improvements, keep pull requests focused by sarga and line range.
 
 ## License And Text Rights
 
-Keep the repository private unless you are sure the poem text, translations, annotations, and images can be published under the license you want to use.
-
+Before redistributing text, translations, annotations, or images, confirm that you have the rights required for your intended use.
