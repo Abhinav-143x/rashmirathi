@@ -1,0 +1,34 @@
+{
+  "title": "रश्मिरथी",
+  "author": "रामधारी सिंह दिनकर",
+  "chapters": [
+    {
+      "slug": "sarga-1",
+      "title": "प्रथम सर्ग"
+    },
+    {
+      "slug": "sarga-2",
+      "title": "द्वितीय सर्ग"
+    },
+    {
+      "slug": "sarga-3",
+      "title": "तृतीय सर्ग"
+    },
+    {
+      "slug": "sarga-4",
+      "title": "चतुर्थ सर्ग"
+    },
+    {
+      "slug": "sarga-5",
+      "title": "पंचम सर्ग"
+    },
+    {
+      "slug": "sarga-6",
+      "title": "षष्ठ सर्ग"
+    },
+    {
+      "slug": "sarga-7",
+      "title": "सप्तम सर्ग"
+    }
+  ]
+}

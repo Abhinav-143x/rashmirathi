@@ -1,0 +1,121 @@
+@import url("https://fonts.googleapis.com/css2?family=Anek+Latin:wght@400;500;600;700&family=Noto+Serif+Devanagari:wght@400;500;600;700&family=Tiro+Devanagari+Hindi:ital@0;1&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+  --reader-max: 820px;
+  --font-devanagari: "Noto Serif Devanagari";
+  --font-display: "Tiro Devanagari Hindi";
+  --font-latin: "Anek Latin";
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  background:
+    linear-gradient(90deg, rgba(18, 59, 70, 0.25), transparent 28%, rgba(125, 30, 28, 0.22)),
+    radial-gradient(circle at 50% -10%, rgba(241, 167, 47, 0.18), transparent 34rem),
+    linear-gradient(180deg, #19110c 0%, #100d0a 48%, #070605 100%);
+  color: #f6ead2;
+}
+
+body::before {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  content: "";
+  opacity: 0.1;
+  background-image:
+    linear-gradient(135deg, rgba(246, 234, 210, 0.2) 1px, transparent 1px),
+    linear-gradient(45deg, rgba(241, 167, 47, 0.14) 1px, transparent 1px);
+  background-size: 42px 42px;
+  mask-image: linear-gradient(to bottom, black, transparent 72%);
+}
+
+::selection {
+  color: #100d0a;
+  background: #f1a72f;
+}
+
+button,
+a,
+summary {
+  -webkit-tap-highlight-color: transparent;
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+.reader-container {
+  width: min(100% - 2rem, var(--reader-max));
+  margin-inline: auto;
+}
+
+.reader-line {
+  content-visibility: auto;
+  contain-intrinsic-size: 112px;
+}
+
+.page-leaf {
+  background:
+    linear-gradient(90deg, rgba(241, 167, 47, 0.07), transparent 10%, transparent 90%, rgba(241, 167, 47, 0.07)),
+    radial-gradient(circle at top, rgba(246, 234, 210, 0.08), transparent 28rem);
+}
+
+.reading-group {
+  scroll-margin-block: 24vh;
+}
+
+.reel-reader {
+  scroll-snap-type: y mandatory;
+  scroll-padding-block: 1rem;
+  overscroll-behavior-y: contain;
+  scrollbar-width: none;
+}
+
+.reel-reader::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+.reel-fullscreen {
+  background:
+    radial-gradient(circle at 50% -10%, rgba(241, 167, 47, 0.16), transparent 25rem),
+    linear-gradient(90deg, #070706 0%, #130806 50%, #070706 100%);
+}
+
+.reel-fullscreen::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(90deg, rgba(241, 167, 47, 0.14), transparent 8%, transparent 92%, rgba(241, 167, 47, 0.14)),
+    linear-gradient(180deg, rgba(16, 13, 10, 0.65), transparent 18%, transparent 82%, rgba(16, 13, 10, 0.8));
+}
+
+.reel-reader .reader-line {
+  contain-intrinsic-size: 620px;
+}
+
+.reel-card {
+  contain-intrinsic-size: 620px;
+  scroll-snap-stop: always;
+}
+
+.battle-art {
+  filter: saturate(1.04) contrast(1.04);
+}
