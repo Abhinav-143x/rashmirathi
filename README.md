@@ -4,6 +4,10 @@ A clean, mobile-friendly reading app for *Rashmirathi* by Ramdhari Singh Dinkar.
 
 The app focuses on a calm Hindi reading experience with chapter-wise reading, line-by-line meanings, English translations, Roman Hindi transliteration, reel-style reading, page-style reading, and local last-read restore.
 
+## Live Site
+
+Production app: https://rashmirathi.vercel.app
+
 ## Features
 
 - Seven sargas of *Rashmirathi* stored as static JSON.
