@@ -26,6 +26,11 @@ This roadmap keeps the app focused on reading quality.
    - Persist auto-scroll seconds.
    - Add theme contrast option.
 
+5. Contribution polish
+   - Add issue templates for meaning corrections.
+   - Add pull request checklist for JSON edits.
+   - Document how reviewers should handle uncertain OCR fixes.
+
 ## Good Later
 
 - PWA manifest and install prompt.
@@ -42,4 +47,3 @@ This roadmap keeps the app focused on reading quality.
 - Community features.
 - AI explanations in production.
 - Heavy animation that slows reading.
-
